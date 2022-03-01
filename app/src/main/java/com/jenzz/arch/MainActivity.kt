@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Surface
@@ -15,7 +16,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.jenzz.arch.mvi.MviScreen
-import com.jenzz.arch.mvvm.MvvmScreen
+import com.jenzz.arch.mvvm.update.MvvmUpdateSettingsScreen
 import com.jenzz.arch.ui.theme.ArchitectureExperimentsTheme
 
 class MainActivity : ComponentActivity() {
@@ -46,7 +47,7 @@ fun App() {
                 )
             }
             composable("mvvm") {
-                MvvmScreen()
+                MvvmUpdateSettingsScreen()
             }
             composable("mvi") {
                 MviScreen()
@@ -61,7 +62,9 @@ private fun MainScreen(
     onMviClick: () -> Unit,
 ) {
     Column(
-        modifier = Modifier.padding(12.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(12.dp),
     ) {
         Button(onClick = onMvvmClick) {
             Text("MVVM")
