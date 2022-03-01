@@ -8,7 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.jenzz.arch.shared.AnalyticsManager
 import com.jenzz.arch.shared.AnalyticsPage
 import com.jenzz.arch.shared.SettingsRepository
-import com.jenzz.arch.shared.SettingsViewState
+import com.jenzz.arch.mvvm.MvvmSettingsViewState
 import kotlinx.coroutines.launch
 
 class MvvmReadSettingsViewModel(
@@ -16,7 +16,7 @@ class MvvmReadSettingsViewModel(
     private val analyticsManager: AnalyticsManager,
 ) : ViewModel() {
 
-    var state by mutableStateOf(SettingsViewState())
+    var state by mutableStateOf(MvvmSettingsViewState())
         private set
 
     init {
@@ -30,7 +30,7 @@ class MvvmReadSettingsViewModel(
 
             val settings = settingsRepository.fetchSettings()
 
-            state = SettingsViewState(
+            state = MvvmSettingsViewState(
                 isLoading = false,
                 isPreference1Enabled = settings.isPreference1Enabled,
                 isPreference2Enabled = settings.isPreference2Enabled,

@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.jenzz.arch.mvi.MviScreen
+import com.jenzz.arch.mvi.update.MviUpdateSettingsScreen
 import com.jenzz.arch.mvvm.update.MvvmUpdateSettingsScreen
 import com.jenzz.arch.ui.theme.ArchitectureExperimentsTheme
 
@@ -50,7 +50,7 @@ fun App() {
                 MvvmUpdateSettingsScreen()
             }
             composable("mvi") {
-                MviScreen()
+                MviUpdateSettingsScreen()
             }
         }
     }

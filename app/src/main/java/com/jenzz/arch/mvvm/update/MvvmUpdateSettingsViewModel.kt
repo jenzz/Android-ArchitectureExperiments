@@ -5,6 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.jenzz.arch.mvvm.MvvmSettingsViewState
 import com.jenzz.arch.shared.*
 import kotlinx.coroutines.launch
 
@@ -13,7 +14,7 @@ class MvvmUpdateSettingsViewModel(
     private val analyticsManager: AnalyticsManager,
 ) : ViewModel() {
 
-    var state by mutableStateOf(SettingsViewState())
+    var state by mutableStateOf(MvvmSettingsViewState())
         private set
 
     init {
@@ -27,7 +28,7 @@ class MvvmUpdateSettingsViewModel(
 
             val settings = settingsRepository.fetchSettings()
 
-            state = SettingsViewState(
+            state = MvvmSettingsViewState(
                 isLoading = false,
                 isPreference1Enabled = settings.isPreference1Enabled,
                 isPreference2Enabled = settings.isPreference2Enabled,

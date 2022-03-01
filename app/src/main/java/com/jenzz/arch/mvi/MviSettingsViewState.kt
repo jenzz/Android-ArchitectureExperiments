@@ -1,7 +1,7 @@
-package com.jenzz.arch.shared
+package com.jenzz.arch.mvi
 
-data class SettingsViewState(
+data class MviSettingsViewState(
     val isLoading: Boolean = false,
     val isPreference1Enabled: Boolean = false,
     val isPreference2Enabled: Boolean = false,
-)
+) : State
